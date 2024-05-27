@@ -1,0 +1,28 @@
+{
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist",
+    "strict": true,
+    "checkJs": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

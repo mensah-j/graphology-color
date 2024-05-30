@@ -10,7 +10,8 @@ export interface ColoringParameters {
 }
 
 export function color(
-  graph: Graphology.UndirectedGraph<Colorable>,
+  // @ts-expect-error: bug in graphology
+  graph: Graphology.Graph<Colorable>,
   parameters: Partial<ColoringParameters> = {}
 ) {
   const minor = new Graph(graph);

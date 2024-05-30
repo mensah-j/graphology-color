@@ -8,6 +8,9 @@
   "files": [
     "dist/index.js"
   ],
+  "workspaces": [
+    "."
+  ],
   "scripts": {
     "preversion": "npm test",
     "prepublish": "npm run tsc",

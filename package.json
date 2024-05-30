@@ -1,6 +1,6 @@
 {
   "name": "graphology-color",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Graph coloring algorithms to be used with graphology",
   "type": "module",
   "main": "./dist/index.js",

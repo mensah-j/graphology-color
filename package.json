@@ -1,24 +1,26 @@
 {
-  "name": "kempe",
+  "name": "graphology-color",
   "version": "0.0.0",
-  "description": "Planar graph coloring using Kempe's algorithm",
+  "description": "Graph coloring algorithms to be used with graphology",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/**/*"
+    "dist/index.js"
   ],
   "scripts": {
     "preversion": "npm test",
     "prepublish": "npm run tsc",
     "prepare": "husky",
     "tsc": "rm -rf dist && tsc",
-    "test": "eslint . && prettier --check . && vitest run"
+    "test": "eslint . && prettier --check . && vitest run",
+    "test:ui": "eslint . && prettier --check . && vitest --ui"
   },
   "author": "Jeffery Mensah",
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.3.0",
+    "@vitest/ui": "^1.6.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.3.0",
@@ -28,13 +30,6 @@
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.10.0",
     "vitest": "^1.6.0"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
   },
   "dependencies": {
     "graphology": "^0.25.4"

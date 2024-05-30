@@ -1,11 +1,12 @@
 import Graphology from 'graphology';
+import { toSimple } from 'graphology-operators';
 import { AbstractGraph, SerializedGraph, Attributes } from 'graphology-types';
 
 interface Mergeable {
   merged: string[];
 }
 
-export class Graph extends Graphology.UndirectedGraph<Mergeable> {
+export class Graph extends Graphology.MultiGraph<Mergeable> {
   private degrees = new Map<string, number>();
   private classes = new Map<number, Set<string>>();
 
@@ -14,14 +15,15 @@ export class Graph extends Graphology.UndirectedGraph<Mergeable> {
       | AbstractGraph<Attributes, Attributes, Attributes>
       | Partial<SerializedGraph<Attributes, Attributes, Attributes>>
   ) {
-    super({
-      allowSelfLoops: false,
-      multi: false
-    });
+    super();
 
     if (graph) {
-      // @ts-expect-error: graphology types
-      super.import(graph);
+      super.import(
+        graph instanceof Graphology.MultiGraph
+          ? toSimple(graph)
+          : // @ts-expect-error: graphology types
+            toSimple(Graphology.MultiGraph.from(graph))
+      );
     }
 
     this.bind();
@@ -125,7 +127,7 @@ export class Graph extends Graphology.UndirectedGraph<Mergeable> {
       this.dropNode(source);
 
       neighborsU.forEach((node) => {
-        if (!this.hasEdge(node, target) && node !== target) {
+        if (!this.areNeighbors(node, target) && node !== target) {
           this.addEdge(node, target);
         }
       });

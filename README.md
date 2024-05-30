@@ -9,15 +9,14 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
 <!-- PROJECT LOGO -->
-<br />
 
 # Graphology Color
 
 Graph coloring algorithms to be used with [**`graphology`**](https://graphology.github.io/).
+
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 <!-- ABOUT THE PROJECT -->
 

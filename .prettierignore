@@ -7,4 +7,5 @@
 *.zip
 package-lock.json
 tsconfig.json
+tsconfig.*.json
 *.d.ts

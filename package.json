@@ -13,8 +13,7 @@
   ],
   "scripts": {
     "preversion": "npm test",
-    "prepublish": "npm run tsc",
-    "prepare": "husky",
+    "prepare": "husky && npm run tsc",
     "tsc": "rm -rf dist && tsc -p tsconfig.build.json",
     "test": "eslint . && prettier --check . && vitest run",
     "test:ui": "eslint . && prettier --check . && vitest --ui"

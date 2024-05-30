@@ -1,1 +1,1 @@
-console.log('kempe!');
+export * from './color.js';

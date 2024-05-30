@@ -41,6 +41,7 @@
     }
   },
   "dependencies": {
-    "graphology": "^0.25.4"
+    "graphology": "^0.25.4",
+    "graphology-operators": "^1.6.0"
   }
 }
